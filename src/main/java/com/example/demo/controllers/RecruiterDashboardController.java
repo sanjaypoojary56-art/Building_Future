@@ -33,20 +33,13 @@ public class RecruiterDashboardController {
     @GetMapping("/recruiter/jobs")
     public List<Jobs> sendJobs()
     {
-        Authentication authentication=SecurityContextHolder.getContext().getAuthentication();
-        String email=authentication.getName();
-        Users u=repo.findByEmail(email);
-        return u.getJobs();
+        rds.sendsomejobs();
     }
     @CrossOrigin(origins = "http://localhost:5173")
     @PutMapping("/recruiter/applications/{applicationid}/status/{status}")
     public Applied chnageStatus(@PathVariable int applicationid,@PathVariable String status)
     {
-        Applied app=r5.findById(applicationid).orElseThrow();
-        System.out.println("The status is :"+status+"The id ius:"+applicationid);
-        app.setStatus(status);
-        r5.save(app);
-        return app;
+        return rds.changethestatus(applicationid,status);
     }
     @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/recruiter/jobs")
