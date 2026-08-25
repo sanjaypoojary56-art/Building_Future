@@ -33,7 +33,7 @@ public class RecruiterDashboardController {
     @GetMapping("/recruiter/jobs")
     public List<Jobs> sendJobs()
     {
-        rds.sendsomejobs();
+       return rds.sendsomejobs();
     }
     @CrossOrigin(origins = "http://localhost:5173")
     @PutMapping("/recruiter/applications/{applicationid}/status/{status}")
