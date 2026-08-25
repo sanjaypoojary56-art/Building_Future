@@ -44,7 +44,7 @@ public class RecruiterDashboardService {
         }
         return app;
     }
-    public changethestatus(int applicationid,String status)
+    public Applied changethestatus(int applicationid,String status)
     {
         Applied app=r5.findById(applicationid).orElseThrow();
         System.out.println("The status is :"+status+"The id ius:"+applicationid);
