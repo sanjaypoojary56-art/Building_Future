@@ -16,27 +16,23 @@ import java.util.List;
 public class admincontroller {
     @Autowired
     private AdminSerivice ads;
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("admin/recruiter-applications")
     @PreAuthorize("hasRole('ADMIN')")
     public List<RecruiterApplications> provide()
     {
         return ads.Allapk();
     }
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/admin/recruiter-applications/{applicationId}/approve")
     @PreAuthorize("hasRole('ADMIN')")
     public String approvehim(@PathVariable Integer applicationId)
     {
       return ads.allrapk(applicationId);
     }
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/admin/recruiter-applications/{applicationId}/reject")
     public String rejecthim(@PathVariable Integer applicationId)
     {
         return ads.rejectapk(applicationId);
     }
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/admin/recruiter-applications/{applicationId}/document")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<byte[]> getDocument(@PathVariable Integer applicationId)
