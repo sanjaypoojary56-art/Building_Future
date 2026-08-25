@@ -5,7 +5,6 @@ import com.example.demo.Repositories.Repository;
 import com.example.demo.Entities.Users;
 import com.example.demo.services.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +14,6 @@ import com.example.demo.ChatRequests.RegisterRequest1;
 public class registerController {
     @Autowired
     private RegisterService rs;
-    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/register")
     public String register1(@RequestBody RegisterRequest1 k)
     {
