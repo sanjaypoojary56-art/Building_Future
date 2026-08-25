@@ -19,14 +19,12 @@ import com.example.demo.Repositories.Repo2;
 public class EditProfileController {
     @Autowired
     private EditprofileService edps;
-    @CrossOrigin(origins = "http://localhost:5173")
     @PutMapping("/profile")
     @PreAuthorize("hasRole('STUDENT')")
     public String editprofile(@RequestBody editrequest ed)
     {
         return edps.editusersprofile(ed);
     }
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/profile")
     @PreAuthorize("hasRole('STUDENT')")
     public editprofileresponse provideprofile() {
