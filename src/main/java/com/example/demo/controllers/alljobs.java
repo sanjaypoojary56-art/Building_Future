@@ -17,13 +17,11 @@ import java.util.List;
 public class alljobs {
     @Autowired
     private AlljobsService ajs;
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/jobs")
     public List<Jobs> getJobs()
     {
         return ajs.getalljobs();
     }
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/jobs/{jobid}")
     public  JobDetailsResponse getJobs(@PathVariable int jobid)
     {
