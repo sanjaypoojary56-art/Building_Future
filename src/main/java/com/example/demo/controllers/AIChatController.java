@@ -6,7 +6,6 @@ import com.example.demo.Responses.AIResponse;
 import com.example.demo.Repositories.Repo1;
 import com.example.demo.Responses.ResponseToReactFromAi;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +23,6 @@ public class AIChatController {
     {
         this.chatClient=builder.build();
     }
-    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/ai/chat")
     public ResponseToReactFromAi generateResponse(@RequestBody AIChatRequest request) {
         String format = converter.getFormat();
