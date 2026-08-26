@@ -1,6 +1,6 @@
 package com.example.demo.ChatRequests;
 
-import com.example.demo.Skill;
+
 
 import java.util.List;
 

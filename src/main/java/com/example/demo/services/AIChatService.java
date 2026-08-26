@@ -8,7 +8,7 @@ import com.example.demo.Entities.Users;
 import com.example.demo.Repositories.Repo1;
 import com.example.demo.Repositories.Repo2;
 import com.example.demo.Repositories.Repo5;
-import com.example.demo.Repositories.Repository;
+import com.example.demo.Repositories.Repository1;
 import com.example.demo.Responses.AIResponse;
 import com.example.demo.Responses.ResponseToReactFromAi;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class AIChatService {
     @Autowired
     private Repo2 r2;
     @Autowired
-    private Repository repo;
+    private Repository1 repo;
     @Autowired
     private Repo1 r1;
     @Autowired

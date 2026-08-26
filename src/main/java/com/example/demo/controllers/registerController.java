@@ -1,7 +1,6 @@
 package com.example.demo.controllers;
 
 import com.example.demo.ChatRequests.RegisterRequest1;
-import com.example.demo.Repositories.Repository;
 import com.example.demo.Entities.Users;
 import com.example.demo.services.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -44,7 +44,21 @@ public class RecruiterDashboardService {
         }
         return app;
     }
-
+    public Applied changethestatus(int applicationid,String status)
+    {
+        Applied app=r5.findById(applicationid).orElseThrow();
+        System.out.println("The status is :"+status+"The id ius:"+applicationid);
+        app.setStatus(status);
+        r5.save(app);
+        return app;
+    }
+public List<Jobs> sendsomejobs()
+    {
+        Authentication authentication=SecurityContextHolder.getContext().getAuthentication();
+        String email=authentication.getName();
+        Users u=repo.findByEmail(email);
+        return u.getJobs();
+    }
     public Jobs addnewjob(addJob add) {
         Authentication authentication=SecurityContextHolder.getContext().getAuthentication();
         assert authentication != null;
