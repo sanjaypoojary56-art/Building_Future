@@ -17,7 +17,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http,JwtFilter jwt)
     {
         System.out.println("its working");
-        return http.csrf(crpf->crpf.disable()).formLogin(form->form.disable()).httpBasic(http1->http1.disable()).authorizeHttpRequests(auth->auth
+        return http.csrf(crpf->crpf.disable()).cors(cors -> {}).formLogin(form->form.disable()).httpBasic(http1->http1.disable()).authorizeHttpRequests(auth->auth
                 .requestMatchers("/auth/**").permitAll().anyRequest().authenticated())
                 .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwt , UsernamePasswordAuthenticationFilter.class).build();

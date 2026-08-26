@@ -7,7 +7,6 @@ import com.example.demo.Repositories.Repo5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApplicationController {
     @Autowired
     private ApplicationService as;
-    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/jobs/{jobid}/apply")
     public String applyforjob(@PathVariable int jobid)
     {

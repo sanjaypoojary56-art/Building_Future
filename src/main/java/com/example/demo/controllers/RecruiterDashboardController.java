@@ -22,38 +22,32 @@ import java.util.List;
 public class RecruiterDashboardController {
     @Autowired
     private RecruiterDashboardService rds;
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/recruiter/applications")
     public List<applicatonresponse> recruiterdashboard()
     {
        return rds.giveresponse();
 
     }
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/recruiter/jobs")
     public List<Jobs> sendJobs()
     {
        return rds.sendsomejobs();
     }
-    @CrossOrigin(origins = "http://localhost:5173")
     @PutMapping("/recruiter/applications/{applicationid}/status/{status}")
     public Applied chnageStatus(@PathVariable int applicationid,@PathVariable String status)
     {
         return rds.changethestatus(applicationid,status);
     }
-    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/recruiter/jobs")
     public Jobs addjob(@RequestBody addJob add)
     {
         return rds.addnewjob(add);
     }
-    @CrossOrigin(origins = "http://localhost:5173")
     @DeleteMapping("/recruiter/jobs/{jobid}")
     public void deletejob(@PathVariable int jobid)
     {
            rds.deleteone(jobid);
     }
-    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/recruiter/skill")
     public List<Skills> getallskill()
     {
