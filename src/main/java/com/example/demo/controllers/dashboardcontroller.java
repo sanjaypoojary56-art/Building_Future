@@ -21,6 +21,7 @@ import java.util.List;
 
 @RestController
 public class dashboardcontroller {
+    @Autowired
     private DashboardService dbs;
     @RequestMapping("/dashboard")
     @PreAuthorize("hasRole('STUDENT')")
