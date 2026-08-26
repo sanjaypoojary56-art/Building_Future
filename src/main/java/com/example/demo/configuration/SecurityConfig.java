@@ -18,7 +18,9 @@ public class SecurityConfig {
     {
         System.out.println("its working");
         return http.csrf(crpf->crpf.disable()).cors(cors -> {}).formLogin(form->form.disable()).httpBasic(http1->http1.disable()).authorizeHttpRequests(auth->auth
-                .requestMatchers("/auth/**").permitAll().anyRequest().authenticated())
+                .requestMatchers("/login",
+        "/register",
+        "/recruiter-register").permitAll().anyRequest().authenticated())
                 .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwt , UsernamePasswordAuthenticationFilter.class).build();
 
