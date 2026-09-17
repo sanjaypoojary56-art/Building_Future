@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration 
 public class CorsConfig{
-@Value("http://localhost:5173")
+@Value("FRONT_URL")
 private String frontUrl;
 @Bean
 public WebMvcConfigurer corsConfigurer (){
