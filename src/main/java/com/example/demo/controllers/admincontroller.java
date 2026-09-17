@@ -1,5 +1,8 @@
 package com.example.demo.controllers;
 
+import com.example.demo.ChatRequests.AddSkill;
+import com.example.demo.ChatRequests.Skill;
+import com.example.demo.Entities.Skills;
 import com.example.demo.RecruiterApplications;
 import com.example.demo.Repositories.ReappRepo;
 
@@ -38,5 +41,18 @@ public class admincontroller {
     public ResponseEntity<byte[]> getDocument(@PathVariable Integer applicationId)
     {
        return ads.showdoc(applicationId);
+    }
+    @PostMapping("admin/addskills")
+    @PreAuthorize("hasRole('ADMIN')")
+    public void addSkills(@RequestBody AddSkill ad)
+    {
+
+        ads.addskill(ad);
+    }
+    @GetMapping("admin/addskills")
+    @PreAuthorize("hasRole('ADMIN')")
+    public List<Skills> showSkills()
+    {
+        return ads.showskill();
     }
 }
