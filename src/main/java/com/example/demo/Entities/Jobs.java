@@ -28,7 +28,8 @@ public class Jobs {
     @JoinColumn(name = "userid")
     private Users us;
     @JsonManagedReference
-    @OneToMany(mappedBy = "job")
+    @OneToMany(mappedBy = "job",cascade=CascadeType.ALL,
+    orphanRemoval = true)
     private List<Applied> app;
 
     public List<Applied> getApp() {
