@@ -55,4 +55,8 @@ public class admincontroller {
     {
         return ads.showskill();
     }
+    @GetMapping("/health")
+public ResponseEntity<String> health() {
+    return ResponseEntity.ok("OK");
+}
 }
