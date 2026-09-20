@@ -261,7 +261,7 @@ public class AIChatService {
                 }
             }
             List<Skills> jk=u.getSkill();
-            Set<String> kl=sk;
+            Set<String> kl=new HashSet<>(sk);
             sk.clear();
             for(Skills hj:jk)
             {
