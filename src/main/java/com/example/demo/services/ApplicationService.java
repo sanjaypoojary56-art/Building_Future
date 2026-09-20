@@ -26,7 +26,7 @@ public class ApplicationService {
         r5.save(ap);
         }catch(Exception e)
             {
-                return e.getMessage();            }
+                return "Application Already Exits";            }
         return "Applied Successfully";
     }
 
