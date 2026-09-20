@@ -261,13 +261,18 @@ public class AIChatService {
                 }
             }
             List<Skills> jk=u.getSkill();
+            List<String> g=new ArrayList();
+            for(Skills b:jk)
+                {
+                  g.add(b.getName());
+                }
             Set<String> kl=new HashSet<>(sk);
             sk.clear();
-            for(Skills hj:jk)
+            for(String hj:kl)
             {
-                if(!kl.contains(hj.getName()))
+                if(!g.contains(hj))
                 {
-                    sk.add(hj.getName());
+                    sk.add(hj);
                 }
             }
             if (!sk.isEmpty()) {
