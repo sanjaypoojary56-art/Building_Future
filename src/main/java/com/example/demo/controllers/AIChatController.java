@@ -43,7 +43,9 @@ public class AIChatController {
             return aw.senddata(converter.convert(response));
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return  aw.senddata(converter.convert("sfdsd"));
+            ResponseToReactFromAi res=new ResponseToReactFromAi();
+            res.setMessage("Ai request Failed");
+            return  aw.senddata(res);
 
         }
 
