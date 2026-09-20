@@ -22,7 +22,11 @@ public class ApplicationService {
         Users u=repo.findByEmail(email);
         Jobs j=rp.findById(jobid).orElseThrow();
         Applied ap=new Applied(u,j,"APPLIED");
+        try{
         r5.save(ap);
+        }catch(Exception e)
+            {
+                return e.getMessage();            }
         return "Applied Successfully";
     }
 
