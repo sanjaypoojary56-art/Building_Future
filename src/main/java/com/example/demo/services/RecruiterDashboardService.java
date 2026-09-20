@@ -48,7 +48,7 @@ public class RecruiterDashboardService {
     {
         Applied app=r5.findById(applicationid).orElseThrow();
         System.out.println("The status is :"+status+"The id ius:"+applicationid);
-        if(status.startsWith("re"))
+        if(status.startsWith("RE"))
         {
             r5.deleteById(applicationid);
             app.setStatus(status);
