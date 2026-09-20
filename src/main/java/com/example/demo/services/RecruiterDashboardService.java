@@ -44,20 +44,21 @@ public class RecruiterDashboardService {
         }
         return app;
     }
-    public ResponseEntity<Void> changethestatus(int applicationid,String status)
+    public Applied changethestatus(int applicationid,String status)
     {
         Applied app=r5.findById(applicationid).orElseThrow();
         System.out.println("The status is :"+status+"The id ius:"+applicationid);
         if(status.startsWith("re"))
         {
             r5.deleteById(applicationid);
+            app.setStatus(status);
         }
         else{
         app.setStatus(status);
         r5.save(app);
-        return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.noContent().build();
+        
+        return app;  
     }
 public List<Jobs> sendsomejobs()
     {
