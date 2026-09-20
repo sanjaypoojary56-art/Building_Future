@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 
 @Entity
+   @Table(name="applied",uniqueConstraints = {@UniqueConstraint(columnNames = {"userid","jobid"})})
 public class Applied {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
